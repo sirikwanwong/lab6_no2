@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function calculate(){
+                let num1 = document.getElementById("number1");
+                let sign = document.getElementById("operator");
+                let num2 = document.getElementById("number2");
+
+                let input1 = parseInt(num1.value);//string->int
+                let in_oper = sign.value;
+                let input2 = parseInt(num2.value);
+
+                console.log(input1);
+                console.log(in_oper);
+                console.log(input2);
+
+                let sum = document.getElementById("result");
+            switch(in_oper){
+                case '+':sum.value = input1 + input2;break;
+                case '-':sum.value = input1 - input2;break;
+                case '*':sum.value = input1 * input2;break;
+                case '/':sum.value = input1 / input2;break;
+                }
+            }
+        </script>
+
+    </head>
+    <body>
+        <form>
+            <input type="text" id="number1" >
+            <select id="operator">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" id="number2">
+            =
+            <input type="text" id="result">
+            <input type="button" id="compute" value="compute" onclick="calculate()">
+        </form>
+    </body>
+</html>
